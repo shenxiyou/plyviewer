@@ -9,9 +9,9 @@ function bindButtonEvent(btn: string, callback: () => void) {
 }
 
 export async function loadMenu(loader: PLYLoader, modelStates: ModelStates, scene: Scene) {
+    // add new button event listener
     bindButtonEvent("#splitPly", splitPly.bind(null, modelStates));
+    
     $("#fileInput").on("change", onFlyFileLoad.bind(null, loader, modelStates, scene));
-    // const fileInput = document.getElementById("fileInput") as HTMLInputElement;
-    // fileInput.addEventListener("change", onFlyFileLoad.bind(null, loader, modelStates, scene));
 }
 
